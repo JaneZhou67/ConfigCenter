@@ -7,6 +7,10 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+  servlet:
+    multipart:
+      max-file-size: 10485760
+      max-request-size: 10485760
 
 eureka:
   client:
