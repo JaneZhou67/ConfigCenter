@@ -1,18 +1,35 @@
 server:
-  port: 8765
+  port: 8763
+
 spring:
   application:
-    name: Consumer
+    name: SERVICE-PROVIDER
 
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC
+    username: root
+    password: ok
+
+  jackson:
+    date-format: yyyy-MM-dd
 
 eureka:
   client:
     service-url:
-      defaultZone:  http://10.10.11.90:8761/eureka
+      defaultZone:  http://localhost:8761/eureka/
 
-feign:
-  hystrix:
-    enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.zb.sp.entity
+  configuration:
+    auto-mapping-behavior: full
+
+
+logging:
+  level:
+    com:
+      zb:
+        sp:
+          dao:  debug
