@@ -1,9 +1,9 @@
-#server:
-  #port: 8766
+server:
+  port: 8766
 
 spring:
-  #application:
-    #name: SERVICE-PROVIDER
+  application:
+    name: SERVICE-PROVIDER
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
