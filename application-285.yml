@@ -4,25 +4,26 @@ server:
 spring:
   application:
     name: Service-Provider
+
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC&&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/smbms?serverTimezone=UTC
     username: root
     password: ok
-
 
 eureka:
   client:
     service-url:
-      defaultZone:  http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+
 mybatis:
-  mapper-locations: classpath:/mappers/*.xml
   configuration:
     auto-mapping-behavior: full
+  mapper-locations: classpath:/mappers/*.xml
 
 logging:
   level:
     com:
       zb:
         sp:
-          dao:  debug
+          dao: debug
